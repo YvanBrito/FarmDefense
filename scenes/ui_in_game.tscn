@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://cayr6wkrbdp1v"]
+
+[ext_resource type="Texture2D" uid="uid://baevighuv4h3e" path="res://assets/Cute_Fantasy_UI/UI_Icons.png" id="1_44mdh"]
+
+[node name="InGameUI" type="CanvasLayer"]
+
+[node name="heartsContainer" type="HBoxContainer" parent="."]
+offset_left = 34.0
+offset_top = 31.0
+offset_right = 218.0
+offset_bottom = 69.0
+theme_override_constants/separation = 0
+
+[node name="heartGui" type="Panel" parent="heartsContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(37, 38)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="heartsContainer/heartGui"]
+position = Vector2(0, -1)
+scale = Vector2(2.3125, 2.25)
+texture = ExtResource("1_44mdh")
+centered = false
+hframes = 8
+vframes = 8
+
+[node name="heartGui2" type="Panel" parent="heartsContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(37, 38)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="heartsContainer/heartGui2"]
+position = Vector2(0, -1)
+scale = Vector2(2.3125, 2.25)
+texture = ExtResource("1_44mdh")
+centered = false
+hframes = 8
+vframes = 8
+
+[node name="heartGui3" type="Panel" parent="heartsContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(37, 38)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="heartsContainer/heartGui3"]
+position = Vector2(0, -1)
+scale = Vector2(2.3125, 2.25)
+texture = ExtResource("1_44mdh")
+centered = false
+hframes = 8
+vframes = 8
