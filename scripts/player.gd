@@ -3,8 +3,19 @@ extends CharacterBody2D
 const SPEED = 200.0
 
 var last_direction: Vector2
+var maxHealth: int = 6
+var currentHealth: int = 6: set = _set_current_health, get = _get_current_health
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+func _set_current_health(new_value: float) -> void:
+	if new_value > maxHealth:
+		currentHealth = maxHealth
+	else:
+		currentHealth = new_value
+
+func _get_current_health() -> float:
+	return currentHealth
 
 func _physics_process(delta: float) -> void:
 	process_inputs()
