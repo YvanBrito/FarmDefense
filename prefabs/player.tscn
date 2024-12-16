@@ -1,10 +1,7 @@
-[gd_scene load_steps=41 format=3 uid="uid://cc2c3haf0pwc8"]
+[gd_scene load_steps=42 format=3 uid="uid://cc2c3haf0pwc8"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_glu0m"]
-[ext_resource type="Texture2D" uid="uid://c2lvb2wmm2unh" path="res://assets/Cute_Fantasy/Player/Player_New/Player_Anim/Player_Idle_Run_Death_Anim.png" id="2_4jeek"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_qua48"]
-radius = 8.0
+[ext_resource type="Texture2D" uid="uid://c2lvb2wmm2unh" path="res://assets/sprites/Cute_Fantasy/Player/Player_New/Player_Anim/Player_Idle_Run_Death_Anim.png" id="2_4jeek"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b0yco"]
 atlas = ExtResource("2_4jeek")
@@ -291,15 +288,31 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qua48"]
+radius = 5.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lct8g"]
+size = Vector2(13, 19)
+
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_glu0m")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_qua48")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_8hsmc")
 animation = &"running_down"
 autoplay = "idle_down"
 frame = 4
 frame_progress = 0.584744
+
+[node name="InteractionCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_qua48")
+
+[node name="DamageArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
+position = Vector2(-0.5, -9.5)
+shape = SubResource("RectangleShape2D_lct8g")
+debug_color = Color(1, 0, 0.0862745, 0.227451)
