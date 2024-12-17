@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj4r7wry6ttst"]
+
+[ext_resource type="Texture2D" uid="uid://cr2x0rr33da05" path="res://assets/sprites/Cute_Fantasy/Icons/No Outline/Food_Icons_NO_Outline.png" id="1_tkid8"]
+
+[node name="FoodSprite" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tkid8")
+hframes = 8
+vframes = 9
+frame = 3

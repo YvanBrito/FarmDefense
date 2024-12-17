@@ -1,14 +1,14 @@
 extends HBoxContainer
 
-const HEART_GUI = preload("res://prefabs/UI_elem/heart_gui.tscn")
+const HEART_GUI: Resource = preload("res://prefabs/UI_elem/heart_gui.tscn")
 
-func setMaxHearts(maxHearts: int):
+func setMaxHearts(maxHearts: int) -> void:
 	for i in range(maxHearts):
-		var heart = HEART_GUI.instantiate()
+		var heart: Panel = HEART_GUI.instantiate()
 		add_child(heart)
 
-func updateHearts(currentHealth):
-	var hearts = get_children()
+func updateHearts(currentHealth: int) -> void:
+	var hearts: Array[Node] = get_children()
 	for i in range(hearts.size()):
 		if currentHealth >= (i+1)*2:
 			hearts[i].update(0)

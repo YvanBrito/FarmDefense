@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 100.0
+const SPEED: float = 100.0
 
 var last_direction: Vector2 = Vector2.DOWN
 var maxHealth: int = 6
@@ -18,6 +18,9 @@ func _set_current_health(new_value: int) -> void:
 
 func _get_current_health() -> int:
 	return currentHealth
+
+func _ready() -> void:
+	InventorySingleton.player = self
 
 func _process(_delta: float) -> void:
 	process_inputs()
@@ -75,7 +78,6 @@ func process_anims() -> void:
 		elif last_direction.x != 0:
 			animated_sprite_2d.flip_h = last_direction.x < 0
 			animated_sprite_2d.play("idle_hor")
-
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite_2d.animation.begins_with("attack"):
