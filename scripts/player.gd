@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 100.0
 
-var last_direction: Vector2
+var last_direction: Vector2 = Vector2.DOWN
 var maxHealth: int = 6
 var currentHealth: int = 6: set = _set_current_health, get = _get_current_health
 var isAttacking: bool = false
@@ -41,6 +41,8 @@ func process_inputs() -> void:
 func process_anims() -> void:
 	if isAttacking:
 		sword_animated_sprite.visible = true
+		#last_direction = get_local_mouse_position()
+		#print(last_direction)
 		if last_direction.y > 0:
 			sword_animated_sprite.position = Vector2(0, -4)
 			animated_sprite_2d.play("attack1_down")
