@@ -5,8 +5,8 @@ extends CanvasLayer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	InventorySingleton.updated_inventory.connect(update_ui)
-	InventorySingleton.add_item(ItemsDict.get_items().get("sword"))
-	InventorySingleton.add_item(ItemsDict.get_items().get("axe"))
+	InventorySingleton.add_item(Items.get_item("sword"))
+	InventorySingleton.add_item(Items.get_item("axe"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

@@ -1,6 +1,6 @@
 extends Node
 
-var ItemsDict: Dictionary = {
+var Items: Dictionary = {
 	"sword": {
 		"name": "Sword",
 		"description": "A small sword.",
@@ -15,5 +15,5 @@ var ItemsDict: Dictionary = {
 	},
 }
 
-func get_items() -> Dictionary:
-	return ItemsDict
+func get_item(item_name: String) -> Dictionary:
+	return Items.get(item_name)
