@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://cayr6wkrbdp1v"]
+
+[ext_resource type="Script" path="res://scripts/UI/ui_in_game.gd" id="1_8ukip"]
+[ext_resource type="Script" path="res://scripts/UI/hearts_container.gd" id="1_h8d7w"]
+[ext_resource type="Texture2D" uid="uid://b813un27bf6bk" path="res://assets/sprites/Cute_Fantasy_UI/UI_Premade.png" id="2_rd4sc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eumio"]
+atlas = ExtResource("2_rd4sc")
+region = Rect2(363, 152, 121, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dpvyo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eumio")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="InGameUI" type="CanvasLayer"]
+script = ExtResource("1_8ukip")
+
+[node name="heartsContainer" type="HBoxContainer" parent="."]
+offset_left = 34.0
+offset_top = 31.0
+offset_right = 218.0
+offset_bottom = 69.0
+theme_override_constants/separation = 0
+script = ExtResource("1_h8d7w")
+
+[node name="ItemsSlots" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -281.0
+offset_top = -95.0
+offset_right = 281.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Background" type="AnimatedSprite2D" parent="ItemsSlots"]
+position = Vector2(273, 33)
+scale = Vector2(2.39474, 2.39474)
+sprite_frames = SubResource("SpriteFrames_dpvyo")
+
+[node name="ItemsSlotsContainer" type="HBoxContainer" parent="ItemsSlots"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -136.0
+offset_top = -58.0
+offset_right = 126.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 15

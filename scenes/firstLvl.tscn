@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cc2c3haf0pwc8" path="res://prefabs/player.tscn" id="1_b4xye"]
 [ext_resource type="Texture2D" uid="uid://177qa2jw5wm6" path="res://assets/sprites/Cute_Fantasy/Tiles/Grass/Grass_Tiles_1.png" id="1_xc6j2"]
 [ext_resource type="Texture2D" uid="uid://cqycvjt8py3q8" path="res://assets/sprites/Cute_Fantasy/Tiles/Grass/Grass_1_Middle.png" id="2_bp2tr"]
-[ext_resource type="PackedScene" uid="uid://cayr6wkrbdp1v" path="res://scenes/ui_in_game.tscn" id="2_e5boy"]
+[ext_resource type="PackedScene" uid="uid://cayr6wkrbdp1v" path="res://prefabs/UI_elem/ui_in_game.tscn" id="2_e5boy"]
 [ext_resource type="Script" path="res://scripts/manager.gd" id="3_exa5y"]
 [ext_resource type="Texture2D" uid="uid://7rymidwk84mt" path="res://assets/sprites/Cute_Fantasy/Trees/Oak_Tree.png" id="3_mle1g"]
 [ext_resource type="Texture2D" uid="uid://besanhx0mprve" path="res://assets/sprites/Cute_Fantasy/Tiles/FarmLand/FarmLand_Tile.png" id="3_p8ynu"]
@@ -214,4 +214,3 @@ script = ExtResource("3_exa5y")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_6npo7")
-autoplay = true
