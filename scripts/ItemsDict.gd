@@ -9,9 +9,15 @@ var Items: Dictionary = {
 	},
 	"axe": {
 		"name": "Axe",
-		"description": "A simple axe.\nYou can use to cut trees.",
+		"description": "A simple axe. You can use to cut trees.",
 		"quantity": 1,
 		"texture_path": "res://assets/sprites/Cute_Fantasy/Icons/No Outline/Tool_Icons_NO_Outline_Separated/axe.png"
+	},
+	"pickaxe": {
+		"name": "Pickaxe",
+		"description": "A simple pickaxe. You can use to break stones.",
+		"quantity": 1,
+		"texture_path": "res://assets/sprites/Cute_Fantasy/Icons/No Outline/Tool_Icons_NO_Outline_Separated/pickaxe.png"
 	},
 }
 

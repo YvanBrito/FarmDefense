@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://dst8f5ojjcwsj"]
+[gd_scene load_steps=20 format=4 uid="uid://dst8f5ojjcwsj"]
 
 [ext_resource type="PackedScene" uid="uid://cc2c3haf0pwc8" path="res://prefabs/player.tscn" id="1_b4xye"]
 [ext_resource type="Texture2D" uid="uid://177qa2jw5wm6" path="res://assets/sprites/Cute_Fantasy/Tiles/Grass/Grass_Tiles_1.png" id="1_xc6j2"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://te03bgk6gkhi" path="res://assets/sprites/Cute_Fantasy/House/Buildings/Houses/House_1_1.png" id="3_yw03c"]
 [ext_resource type="Texture2D" uid="uid://c83w6nmcwwtb2" path="res://assets/sprites/Cute_Fantasy/Tiles/Beach/Beach_Decor_Tiles.png" id="4_kjmei"]
 [ext_resource type="AudioStream" uid="uid://ckirxy3lhhluf" path="res://assets/music/time_for_adventure.mp3" id="8_6npo7"]
+[ext_resource type="PackedScene" uid="uid://clyfcvekbf5nj" path="res://prefabs/UI_elem/pause_menu.tscn" id="9_qu80g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ip4e0"]
 texture = ExtResource("1_xc6j2")
@@ -208,10 +209,12 @@ current = true
 
 [node name="InGameUI" parent="." instance=ExtResource("2_e5boy")]
 
+[node name="PauseMenu" parent="." instance=ExtResource("9_qu80g")]
+visible = false
+
 [node name="Manager" type="Node2D" parent="."]
 position = Vector2(168, -23)
 script = ExtResource("3_exa5y")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_6npo7")
-autoplay = true

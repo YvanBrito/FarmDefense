@@ -7,12 +7,16 @@ func _ready() -> void:
 	InventorySingleton.updated_inventory.connect(update_ui)
 	InventorySingleton.add_item(Items.get_item("sword"))
 	InventorySingleton.add_item(Items.get_item("axe"))
+	InventorySingleton.add_item(Items.get_item("pickaxe"))
+	InventorySingleton.add_item(Items.get_item("sword"))
+	InventorySingleton.add_item(Items.get_item("sword"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
 
 func update_ui() -> void:
+	print("in game inventory")
 	for n in items_slots_container.get_children():
 		items_slots_container.remove_child(n)
 		n.queue_free() 

@@ -6,7 +6,7 @@ const UNDER_MOUSE = Vector2(10, 15)
 var item_details: Dictionary : set = _set_item_details, get = _get_item_details
 var description_pos: Vector2 = UNDER_MOUSE
 
-@onready var item_sprite: Sprite2D = $ItemSprite
+@onready var item_sprite: TextureRect = $TextureRect
 @onready var color_rect: ColorRect = $ColorRect
 @onready var item_name: Label = $ColorRect/ItemName
 @onready var item_description: Label = $ColorRect/ItemDescription

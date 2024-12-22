@@ -11,9 +11,13 @@ offset_right = 41.0
 offset_bottom = 38.0
 script = ExtResource("1_2o56h")
 
-[node name="ItemSprite" type="Sprite2D" parent="."]
-position = Vector2(19, 19)
-scale = Vector2(2.375, 2.375)
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_67fo1")
 
 [node name="VisibleOnScreenNotifierDown" type="VisibleOnScreenNotifier2D" parent="."]
@@ -50,6 +54,9 @@ offset_top = -71.0
 offset_right = 201.0
 offset_bottom = -9.0
 grow_vertical = 0
+text = "A simple pickaxe. You can use to break stones."
+autowrap_mode = 2
+clip_text = true
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
