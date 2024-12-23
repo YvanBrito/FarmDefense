@@ -204,6 +204,8 @@ limit_top = -315
 limit_right = 1040
 limit_bottom = 657
 
+[node name="RayCast2D" type="RayCast2D" parent="Player/Camera2D"]
+
 [node name="AudioListener2D" type="AudioListener2D" parent="Player"]
 current = true
 

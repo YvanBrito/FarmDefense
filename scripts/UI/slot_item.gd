@@ -48,11 +48,11 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	color_rect.visible = false
 
-func _get_drag_data(at_position:Vector2)->Variant:
+func _get_drag_data(_at_position:Vector2)->Variant:
 	var preview_texture := TextureRect.new()
 	
 	preview_texture.texture = item_sprite.texture
-	preview_texture.expand_mode = 1
+	preview_texture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	preview_texture.size = Vector2(49, 49)
 	
 	var preview := Control.new()
@@ -62,10 +62,10 @@ func _get_drag_data(at_position:Vector2)->Variant:
 	
 	return self
 
-func _can_drop_data(at_position:Vector2, data:Variant)->bool:
+func _can_drop_data(_at_position:Vector2, data:Variant)->bool:
 	return data is Slot
 
-func _drop_data(at_position:Vector2, data:Variant)->void:
+func _drop_data(_at_position:Vector2, data:Variant)->void:
 	if item_details == {}:
 		item_details = data.item_details
 		InventorySingleton.backpack_itens[slot_index] = InventorySingleton.backpack_itens[data.slot_index]

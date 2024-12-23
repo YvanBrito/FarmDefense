@@ -9,6 +9,9 @@ var isAttacking: bool = false
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var sword_animated_sprite: AnimatedSprite2D = $SwordAnimatedSprite
+@onready var ray_cast_2d: RayCast2D = $Camera2D/RayCast2D
+@onready var ground: TileMapLayer = $"../TileMapLayer/Ground"
+@onready var in_game_ui: CanvasLayer = $"../InGameUI"
 
 func _set_current_health(new_value: int) -> void:
 	if new_value > maxHealth:
@@ -22,6 +25,10 @@ func _get_current_health() -> int:
 func _ready() -> void:
 	InventorySingleton.player = self
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and Input.is_action_pressed("action_tool") and Engine.time_scale == 1:
+		isAttacking = true
+
 func _process(_delta: float) -> void:
 	process_inputs()
 	process_anims()
@@ -32,9 +39,6 @@ func _physics_process(_delta: float) -> void:
 func process_inputs() -> void:
 	var horizontal_dir := Input.get_axis("ui_left", "ui_right")
 	var vertical_dir := Input.get_axis("ui_up", "ui_down")
-	
-	if Input.is_action_pressed("action_tool"):
-		isAttacking = true
 	
 	if isAttacking:
 		velocity = Vector2.ZERO
