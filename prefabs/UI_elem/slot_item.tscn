@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://5xfs2ywrmqso"]
+[gd_scene load_steps=2 format=3 uid="uid://5xfs2ywrmqso"]
 
 [ext_resource type="Script" path="res://scripts/UI/slot_item.gd" id="1_2o56h"]
-[ext_resource type="Texture2D" uid="uid://cmkbbchmkt2c8" path="res://assets/sprites/Cute_Fantasy/Icons/No Outline/Tool_Icons_NO_Outline_Separated/sword.png" id="2_67fo1"]
 
 [node name="Slot" type="Control"]
 custom_minimum_size = Vector2(41, 30)
@@ -11,6 +10,16 @@ offset_right = 41.0
 offset_bottom = 38.0
 script = ExtResource("1_2o56h")
 
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.223529)
+
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -18,7 +27,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_67fo1")
 
 [node name="VisibleOnScreenNotifierDown" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(149.5, 142)
@@ -29,6 +37,7 @@ position = Vector2(150, 42)
 scale = Vector2(10.35, 0.0999999)
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 z_index = 1
 layout_mode = 0
 offset_left = 46.0

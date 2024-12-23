@@ -2,26 +2,16 @@ extends CanvasLayer
 
 @onready var items_slots_container: HBoxContainer = $ItemsSlots/ItemsSlotsContainer
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	InventorySingleton.updated_inventory.connect(update_ui)
-	InventorySingleton.add_item(Items.get_item("sword"))
+	InventorySingleton.add_item(Items.get_item("sword"), false)
 	InventorySingleton.add_item(Items.get_item("axe"))
 	InventorySingleton.add_item(Items.get_item("pickaxe"))
-	InventorySingleton.add_item(Items.get_item("sword"))
-	InventorySingleton.add_item(Items.get_item("sword"))
+	InventorySingleton.add_item(Items.get_item("sickle"))
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
 
 func update_ui() -> void:
-	print("in game inventory")
-	for n in items_slots_container.get_children():
-		items_slots_container.remove_child(n)
-		n.queue_free() 
-	for item in InventorySingleton.selected_itens:
-		var new_slot: PackedScene = preload("res://prefabs/UI_elem/slot_item.tscn")
-		var slot: Control = new_slot.instantiate()
-		items_slots_container.add_child(slot)
-		slot.item_details = item
+	for slot in items_slots_container.get_children():
+		slot.item_details = InventorySingleton.in_use_itens[slot.get_index()]

@@ -14,10 +14,11 @@ var description_pos: Vector2 = UNDER_MOUSE
 @onready var visible_on_screen_notifier_up: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifierUp
 
 func _set_item_details(_item_details: Dictionary) -> void:
-	item_details = _item_details
-	item_name.text = item_details.get("name")
-	item_description.text = item_details.get("description")
-	item_sprite.texture = load(item_details.get("texture_path"))
+	if _item_details:
+		item_details = _item_details
+		item_name.text = item_details.get("name")
+		item_description.text = item_details.get("description")
+		item_sprite.texture = load(item_details.get("texture_path"))
 
 func _get_item_details() -> Dictionary:
 	return item_details
@@ -29,12 +30,13 @@ func _process(_delta: float) -> void:
 	description_pos = UNDER_MOUSE
 	if visible_on_screen_notifier_up.is_on_screen() and not visible_on_screen_notifier_down.is_on_screen():
 		description_pos = ABOVE_MOUSE
-		
+
+func _physics_process(_delta: float) -> void:
 	if color_rect.visible:
 		color_rect.position = get_local_mouse_position() + description_pos
 
 func _on_mouse_entered() -> void:
-	color_rect.visible = true
+	if item_details.get("description"): color_rect.visible = true
 
 func _on_mouse_exited() -> void:
 	color_rect.visible = false
