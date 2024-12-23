@@ -47,146 +47,171 @@ grow_vertical = 2
 offset_top = 1.0
 offset_right = 43.0
 offset_bottom = 44.0
+slot_index = 5
 
 [node name="Slot2" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_left = 62.0
 offset_top = 1.0
 offset_right = 105.0
 offset_bottom = 44.0
+slot_index = 6
 
 [node name="Slot3" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_left = 125.0
 offset_top = 1.0
 offset_right = 168.0
 offset_bottom = 44.0
+slot_index = 7
 
 [node name="Slot4" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_left = 187.0
 offset_top = 1.0
 offset_right = 230.0
 offset_bottom = 44.0
+slot_index = 8
 
 [node name="Slot5" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_left = 249.0
 offset_top = 1.0
 offset_right = 292.0
 offset_bottom = 44.0
+slot_index = 9
 
 [node name="Slot6" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_top = 63.0
 offset_right = 43.0
 offset_bottom = 106.0
+slot_index = 10
 
 [node name="Slot7" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_left = 62.0
 offset_top = 63.0
 offset_right = 105.0
 offset_bottom = 106.0
+slot_index = 11
 
 [node name="Slot8" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_left = 125.0
 offset_top = 63.0
 offset_right = 168.0
 offset_bottom = 106.0
+slot_index = 12
 
 [node name="Slot9" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_left = 187.0
 offset_top = 63.0
 offset_right = 230.0
 offset_bottom = 106.0
+slot_index = 13
 
 [node name="Slot10" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_left = 249.0
 offset_top = 63.0
 offset_right = 292.0
 offset_bottom = 106.0
+slot_index = 14
 
 [node name="Slot11" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_top = 125.0
 offset_right = 43.0
 offset_bottom = 169.0
+slot_index = 15
 
 [node name="Slot12" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_left = 62.0
 offset_top = 125.0
 offset_right = 105.0
 offset_bottom = 169.0
+slot_index = 16
 
 [node name="Slot13" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_left = 124.0
 offset_top = 125.0
 offset_right = 168.0
 offset_bottom = 169.0
+slot_index = 17
 
 [node name="Slot14" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_left = 186.0
 offset_top = 125.0
 offset_right = 230.0
 offset_bottom = 169.0
+slot_index = 18
 
 [node name="Slot15" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_left = 249.0
 offset_top = 125.0
 offset_right = 292.0
 offset_bottom = 168.0
+slot_index = 19
 
 [node name="Slot16" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_top = 187.0
 offset_right = 43.0
 offset_bottom = 230.0
+slot_index = 20
 
 [node name="Slot17" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_left = 62.0
 offset_top = 187.0
 offset_right = 105.0
 offset_bottom = 230.0
+slot_index = 21
 
 [node name="Slot18" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_left = 125.0
 offset_top = 187.0
 offset_right = 168.0
 offset_bottom = 230.0
+slot_index = 22
 
 [node name="Slot19" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_left = 187.0
 offset_top = 187.0
 offset_right = 230.0
 offset_bottom = 230.0
+slot_index = 23
 
 [node name="Slot20" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_left = 249.0
 offset_top = 187.0
 offset_right = 292.0
 offset_bottom = 230.0
+slot_index = 24
 
 [node name="Slot21" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_top = 250.0
 offset_right = 43.0
 offset_bottom = 293.0
+slot_index = 25
 
 [node name="Slot22" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_left = 62.0
 offset_top = 250.0
 offset_right = 105.0
 offset_bottom = 293.0
+slot_index = 26
 
 [node name="Slot23" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_left = 125.0
 offset_top = 250.0
 offset_right = 168.0
 offset_bottom = 293.0
+slot_index = 27
 
 [node name="Slot24" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_left = 187.0
 offset_top = 250.0
 offset_right = 230.0
 offset_bottom = 293.0
+slot_index = 28
 
 [node name="Slot25" parent="TextureRect/Backpack" instance=ExtResource("3_uadae")]
 offset_left = 249.0
 offset_top = 250.0
 offset_right = 292.0
 offset_bottom = 293.0
+slot_index = 29
 
 [node name="InUse" type="Control" parent="TextureRect"]
 layout_mode = 1
@@ -210,18 +235,22 @@ offset_bottom = 43.0
 offset_left = 62.0
 offset_right = 105.0
 offset_bottom = 43.0
+slot_index = 1
 
 [node name="Slot3" parent="TextureRect/InUse" instance=ExtResource("3_uadae")]
 offset_left = 125.0
 offset_right = 168.0
 offset_bottom = 43.0
+slot_index = 2
 
 [node name="Slot4" parent="TextureRect/InUse" instance=ExtResource("3_uadae")]
 offset_left = 187.0
 offset_right = 230.0
 offset_bottom = 43.0
+slot_index = 3
 
 [node name="Slot5" parent="TextureRect/InUse" instance=ExtResource("3_uadae")]
 offset_left = 249.0
 offset_right = 292.0
 offset_bottom = 43.0
+slot_index = 4
