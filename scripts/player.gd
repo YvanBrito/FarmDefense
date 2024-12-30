@@ -26,7 +26,7 @@ func _ready() -> void:
 	InventorySingleton.player = self
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and Input.is_action_pressed("action_tool") and Engine.time_scale == 1:
+	if (event is InputEventMouseButton or event is InputEventJoypadButton) and Input.is_action_pressed("action_tool") and Engine.time_scale == 1:
 		isAttacking = true
 
 func _process(_delta: float) -> void:
@@ -48,7 +48,7 @@ func process_inputs() -> void:
 func process_anims() -> void:
 	if isAttacking:
 		sword_animated_sprite.visible = true
-		#last_direction = get_local_mouse_position()
+		#last_direction = get_local_mouse_position().normalized()
 		#print(last_direction)
 		if last_direction.y > 0:
 			sword_animated_sprite.position = Vector2(0, -4)
