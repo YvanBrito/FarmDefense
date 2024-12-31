@@ -199,12 +199,10 @@ position = Vector2(34, -22)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
-limit_left = -415
-limit_top = -315
-limit_right = 1040
-limit_bottom = 657
-
-[node name="RayCast2D" type="RayCast2D" parent="Player/Camera2D"]
+limit_left = -702
+limit_top = -480
+limit_right = 750
+limit_bottom = 494
 
 [node name="AudioListener2D" type="AudioListener2D" parent="Player"]
 current = true

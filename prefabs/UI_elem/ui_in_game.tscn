@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cayr6wkrbdp1v"]
+[gd_scene load_steps=8 format=3 uid="uid://cayr6wkrbdp1v"]
 
 [ext_resource type="Script" path="res://scripts/UI/ui_in_game.gd" id="1_8ukip"]
 [ext_resource type="Script" path="res://scripts/UI/hearts_container.gd" id="1_h8d7w"]
 [ext_resource type="Texture2D" uid="uid://b813un27bf6bk" path="res://assets/sprites/Cute_Fantasy_UI/UI_Premade.png" id="2_rd4sc"]
 [ext_resource type="PackedScene" uid="uid://5xfs2ywrmqso" path="res://prefabs/UI_elem/slot_item.tscn" id="4_4molc"]
+[ext_resource type="PackedScene" uid="uid://dfynicjympins" path="res://prefabs/UI_elem/selection_gui.tscn" id="4_iuvo2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eumio"]
 atlas = ExtResource("2_rd4sc")
@@ -67,6 +68,9 @@ offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 13
+
+[node name="SelectionGUI" parent="ItemsSlots/ItemsSlotsContainer" instance=ExtResource("4_iuvo2")]
+position = Vector2(19, 21)
 
 [node name="Slot" parent="ItemsSlots/ItemsSlotsContainer" instance=ExtResource("4_4molc")]
 layout_mode = 2

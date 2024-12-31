@@ -44,9 +44,12 @@ func _physics_process(_delta: float) -> void:
 func _on_mouse_entered() -> void:
 	if item_details.get("description") and item_details.get("description") != "":
 		color_rect.visible = true
+	
+	InventorySingleton.index_selected_slot_pause_menu = slot_index
 
 func _on_mouse_exited() -> void:
 	color_rect.visible = false
+	InventorySingleton.index_selected_slot_pause_menu = -1
 
 func _get_drag_data(_at_position:Vector2)->Variant:
 	var preview_texture := TextureRect.new()

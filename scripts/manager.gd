@@ -19,6 +19,10 @@ func _ready() -> void:
 	hearts_container.updateHearts(player.currentHealth)
 
 func _process(_delta: float) -> void:
+	change_selector_tile()
+	pass
+
+func change_selector_tile() -> void:
 	var mousePos: Vector2 = ground.get_local_mouse_position()
 	var loc: Vector2 = ground.local_to_map(mousePos)
 	tile_selector.position = ground.map_to_local(loc) - Vector2(8, 8)

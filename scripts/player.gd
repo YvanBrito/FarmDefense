@@ -9,7 +9,6 @@ var isAttacking: bool = false
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var sword_animated_sprite: AnimatedSprite2D = $SwordAnimatedSprite
-@onready var ray_cast_2d: RayCast2D = $Camera2D/RayCast2D
 @onready var ground: TileMapLayer = $"../TileMapLayer/Ground"
 @onready var in_game_ui: CanvasLayer = $"../InGameUI"
 
@@ -27,6 +26,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton or event is InputEventJoypadButton) and Input.is_action_pressed("action_tool") and Engine.time_scale == 1:
+		last_direction = position.direction_to(get_global_mouse_position()).normalized()
 		isAttacking = true
 
 func _process(_delta: float) -> void:
@@ -48,19 +48,19 @@ func process_inputs() -> void:
 func process_anims() -> void:
 	if isAttacking:
 		sword_animated_sprite.visible = true
-		#last_direction = get_local_mouse_position().normalized()
-		#print(last_direction)
-		if last_direction.y > 0:
-			sword_animated_sprite.position = Vector2(0, -4)
-			animated_sprite_2d.play("attack1_down")
-			sword_animated_sprite.play("attack1_down")
-		elif last_direction.y < 0:
-			sword_animated_sprite.position = Vector2(0, -8)
-			animated_sprite_2d.play("attack1_up")
-			sword_animated_sprite.play("attack1_up")
+		if abs(last_direction.y) > abs(last_direction.x):
+			if last_direction.y > 0:
+				sword_animated_sprite.position = Vector2(0, -4)
+				animated_sprite_2d.play("attack1_down")
+				sword_animated_sprite.play("attack1_down")
+			elif last_direction.y < 0:
+				sword_animated_sprite.position = Vector2(0, -8)
+				animated_sprite_2d.play("attack1_up")
+				sword_animated_sprite.play("attack1_up")
 		elif last_direction.x != 0:
 			sword_animated_sprite.position = Vector2(0, -8)
 			animated_sprite_2d.flip_h = last_direction.x < 0
+			sword_animated_sprite.flip_h = last_direction.x < 0
 			animated_sprite_2d.play("attack1_hor")
 			sword_animated_sprite.play("attack1_hor")
 	elif velocity != Vector2.ZERO:
@@ -75,9 +75,9 @@ func process_anims() -> void:
 			animated_sprite_2d.flip_h = velocity.x < 0
 			sword_animated_sprite.flip_h = velocity.x < 0
 	else:
-		if last_direction.y > 0:
+		if last_direction.y > 0 and abs(last_direction.y) < abs(last_direction.x):
 			animated_sprite_2d.play("idle_down")
-		elif last_direction.y < 0:
+		elif last_direction.y < 0 and abs(last_direction.y) > abs(last_direction.x):
 			animated_sprite_2d.play("idle_up")
 		elif last_direction.x != 0:
 			animated_sprite_2d.flip_h = last_direction.x < 0

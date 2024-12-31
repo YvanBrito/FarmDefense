@@ -1,6 +1,8 @@
 extends Node
 
 var backpack_itens: Array[Dictionary] = []
+var index_selected_slot_in_game: int = 2
+var index_selected_slot_pause_menu: int = 6
 var player: CharacterBody2D = null
 
 signal updated_inventory
